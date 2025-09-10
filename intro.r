@@ -1,14 +1,3 @@
-# VU Recommender Systems - Exercises with rrecsys
-# =================================================
-
-# 1. Install rrecsys from GitHub and load the library
-# Note: You may need to install devtools first if not already installed
-# install.packages("devtools")
-
-# Install rrecsys from GitHub
-# if (!require(rrecsys)) {
-#   devtools::install_github("ludovikcoba/rrecsys")
-# }
 
 # Load required libraries
 library(rrecsys)
@@ -51,17 +40,10 @@ print(paste("Sparsity:", round(sparsity_value*100, 2), "%"))
 
 
 #plot histogram of ratings per item
-# ggplot(data.frame(num_ratings = number_of_ratings_per_item), aes(x = num_ratings)) +
-#   geom_histogram(binwidth = 1, fill = "blue", color = "black", alpha = 0.7) +
-#   labs(title = "Histogram of Number of Ratings per Item",
-#        x = "Number of Ratings",
-#        y = "Count of Items") +
-#   theme_minimal()
 print(histogram(ml_data))
 
 
 # Plot long tail distribution of ratings per item
-
 sorted_item_ratings <- sort(number_of_ratings_per_item, decreasing = TRUE)
 
 
